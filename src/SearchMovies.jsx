@@ -3,7 +3,7 @@ export default function SearchMovies() {
     e.preventDefault();
     console.log("submit form");
 
-    const query = "Jurassic Park";
+    const query = "Jurassic";
 
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${
       import.meta.env.VITE_APIKEY
@@ -15,18 +15,18 @@ export default function SearchMovies() {
   };
 
   return (
-    <form className="mt-10 grid" onSubmit={searchMovies}>
-      <label className="uppercase text-left text-sm" htmlFor="query">
+    <form className="grid mt-10" onSubmit={searchMovies}>
+      <label className="text-sm text-left uppercase" htmlFor="query">
         Movie Name
       </label>
       <input
-        className="p-2 rounded-full mb-3 border"
+        className="p-2 mb-3 border rounded-full"
         type="text"
         name="query"
         placeholder="i.e. Jurassic Park"
       />
       <button
-        className="p-2 bg-gray-900 rounded-full text-white hover:bg-gray-800"
+        className="p-2 text-white bg-gray-900 rounded-full hover:bg-gray-800"
         type="submit"
       >
         Search
